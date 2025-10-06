@@ -58,6 +58,17 @@ pipeline
                 }
             }
         }
+        stage('SECURITY-IMAGE-SCANNER') {
+            steps {
+                sh 'echo Scanning Docker image for vulnerabilities...'
+            }
+        }
+
+        stage('Pull-image-server') {
+            steps {
+                sh 'echo Pulling image on server...'
+            }
+        }
         stage('DAST')
         {
             steps
